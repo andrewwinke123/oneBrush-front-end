@@ -14,6 +14,7 @@ import EditRequest from './pages/EditRequest/EditRequest'
 import Home from './pages/Home/Home/'
 import Gallery from './pages/Gallery/Gallery/'
 import Contact from './pages/Contact/Contact/'
+import Offers from './pages/Offers/Offers/'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -124,6 +125,10 @@ function App() {
         <Route
           path='/contact'
           element={<Contact />}
+        />
+        <Route
+          path='/offers'
+          element={<Offers />}
         />
       </Routes>
     </>
