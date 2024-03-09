@@ -13,6 +13,7 @@ import NewRequest from './pages/NewRequest/NewRequest'
 import EditRequest from './pages/EditRequest/EditRequest'
 import Home from './pages/Home/Home/'
 import Gallery from './pages/Gallery/Gallery/'
+import Contact from './pages/Contact/Contact/'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -119,6 +120,10 @@ function App() {
         <Route
           path='/gallery'
           element={<Gallery />}
+        />
+        <Route
+          path='/contact'
+          element={<Contact />}
         />
       </Routes>
     </>
