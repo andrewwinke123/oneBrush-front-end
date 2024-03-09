@@ -12,6 +12,7 @@ import RequestDetails from './pages/RequestDetails/RequestDetails'
 import NewRequest from './pages/NewRequest/NewRequest'
 import EditRequest from './pages/EditRequest/EditRequest'
 import Home from './pages/Home/Home/'
+import Gallery from './pages/Gallery/Gallery/'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -114,6 +115,10 @@ function App() {
         <Route
           path='/home'
           element={<Home />}
+        />
+        <Route
+          path='/gallery'
+          element={<Gallery />}
         />
       </Routes>
     </>
