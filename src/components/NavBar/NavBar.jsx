@@ -11,6 +11,7 @@ const NavBar = ({ user, handleLogout }) => {
 
   const publicLinks = (
     <ul>
+      <li><NavLink to="/home">HOME</NavLink></li>
       <li><NavLink to="/auth/login">LOG IN</NavLink></li>
       <li><NavLink to="/auth/signup">SIGN UP</NavLink></li>
     </ul>
