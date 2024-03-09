@@ -11,6 +11,7 @@ import RequestList from './pages/RequestList/RequestList'
 import RequestDetails from './pages/RequestDetails/RequestDetails'
 import NewRequest from './pages/NewRequest/NewRequest'
 import EditRequest from './pages/EditRequest/EditRequest'
+import Home from './pages/Home/Home/'
 
 // components
 import NavBar from './components/NavBar/NavBar'
@@ -109,6 +110,10 @@ function App() {
               <EditRequest handleUpdateRequest={handleUpdateRequest} />
             </ProtectedRoute>
           }
+        />
+        <Route
+          path='/home'
+          element={Home}
         />
       </Routes>
     </>
