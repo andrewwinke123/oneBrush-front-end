@@ -13,7 +13,7 @@ const NavBar = ({ user, handleLogout }) => {
     <ul>
       <li><NavLink to="/home">HOME</NavLink></li>
       <li><NavLink to="/gallery">GALLERY</NavLink></li>
-      <li><NavLink to="/contact">CONTACT</NavLink></li>
+      <li><NavLink to="/requests">CONTACT</NavLink></li>
       <li><NavLink to="/offers">SERVICES</NavLink></li>
       <li><NavLink to="/auth/login">LOG IN</NavLink></li>
       <li><NavLink to="/auth/signup">SIGN UP</NavLink></li>
@@ -23,7 +23,7 @@ const NavBar = ({ user, handleLogout }) => {
   const protectedLinks = (
     <ul>
       <li>
-        <NavLink to='/requests'>REQUEST</NavLink>
+        <NavLink to='/requests'>CONTACT</NavLink>
       </li>
       <li>
         <NavLink to='/requests/new'>NEW REQUEST</NavLink>
