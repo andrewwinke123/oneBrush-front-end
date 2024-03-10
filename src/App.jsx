@@ -101,9 +101,7 @@ function App() {
         <Route 
           path='/requests/new'
           element={
-            <ProtectedRoute user={user}>
               <NewRequest handleAddRequest={handleAddRequest} />
-            </ProtectedRoute>
           }
         />
         <Route 
