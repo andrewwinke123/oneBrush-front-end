@@ -1,59 +1,59 @@
 // npm modules
-import { useState, useEffect } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react"
+import { useParams, Link, useNavigate } from "react-router-dom"
 
 // components
-import Loading from "../Loading/Loading";
-import AuthorInfo from "../../components/AuthorInfo/AuthorInfo";
-import Icon from "../../components/Icon/Icon";
-import NewComment from "../../components/NewComment/NewComment";
-import Comments from "../../components/Comments/Comments";
+import Loading from "../Loading/Loading"
+import AuthorInfo from "../../components/AuthorInfo/AuthorInfo"
+import Icon from "../../components/Icon/Icon"
+import NewComment from "../../components/NewComment/NewComment"
+import Comments from "../../components/Comments/Comments"
 
 // services
-import * as requestService from '../../services/requestService';
+import * as requestService from '../../services/requestService'
 
 // css
-import styles from './RequestDetails.module.css';
+import styles from './RequestDetails.module.css'
 
 const RequestDetails = (props) => {
-  const { requestId } = useParams();
-  const [request, setRequest] = useState(null);
-  const [error, setError] = useState('');
-  const navigate = useNavigate();
+  const { requestId } = useParams()
+  const [request, setRequest] = useState(null)
+  const [error, setError] = useState('')
+  const navigate = useNavigate()
 
   useEffect(() => {
     const fetchRequest = async () => {
       try {
-        const data = await requestService.show(requestId);
+        const data = await requestService.show(requestId)
         if (data.error) {
-          setError(data.error);
+          setError(data.error)
         } else {
-          setRequest(data);
+          setRequest(data)
         }
       } catch (err) {
         // Handle errors such as network issues, or if the request fails for other reasons
-        setError('Failed to load request details. Please try again later.');
+        setError('Failed to load request details. Please try again later.')
       }
-    };
-    fetchRequest();
-  }, [requestId]);
+    }
+    fetchRequest()
+  }, [requestId])
 
   const handleAddComment = async (commentFormData) => {
-    const newComment = await requestService.createComment(requestId, commentFormData);
+    const newComment = await requestService.createComment(requestId, commentFormData)
     if (newComment.error) {
-      setError(newComment.error);
+      setError(newComment.error)
     } else {
-      setRequest({...request, comments: [...request.comments, newComment]});
+      setRequest({...request, comments: [...request.comments, newComment]})
     }
-  };
+  }
 
   if (error) {
     // Optionally, navigate back or display an error message
-    // navigate("/");
-    return <div>{error}</div>;
+    // navigate("/")
+    return <div>{error}</div>
   }
 
-  if (!request) return <Loading />;
+  if (!request) return <Loading />
 
   return (
     <main className={styles.container}>
@@ -83,7 +83,7 @@ const RequestDetails = (props) => {
         <Comments comments={request.comments} user={props.user} />
       </section>
     </main>
-  );
-};
+  )
+}
 
-export default RequestDetails;
+export default RequestDetails
